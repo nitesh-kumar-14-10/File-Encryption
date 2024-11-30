@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>File Encryption Tool</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #4CAF50;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h4 {
+      color: #4CAF50;
+      margin-top: 30px;
+    }
+
+    form {
+      margin: 20px 0;
+    }
+
+    input[type="file"],
+    input[type="text"],
+    input[type="submit"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: #45a049;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: #4CAF50;
+      color: white;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px;
+      }
+
+      input[type="text"],
+      input[type="file"] {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Encrypt and Decrypt Files</h1>
+    <nav>
+      <a href="#encrypt">Encrypt</a>
+      <a href="#decrypt">Decrypt</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>A Tool to Encrypt and Decrypt Files</h2>
+    <p>Use this tool to secure your sensitive files with encryption. You can also decrypt files that you have previously encrypted.</p>
+
+    <h4 id="encrypt">Encrypt</h4>
+    <form action="/encrypt" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" required />
+      <input type="text" placeholder="Enter passphrase" name="passphrase" required>
+      <input type="submit" value="Encrypt File"/>
+    </form>
+
+    <h4 id="decrypt">Decrypt</h4>
+    <form action="/decrypt" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" required />
+      <input type="text" placeholder="Enter passphrase" name="passphrase" required>
+      <input type="submit" value="Decrypt File"/>
+    </form>
+    <h4 id="about">About This Tool</h4>
+    <p>This tool is designed to help users securely encrypt and decrypt files using a passphrase. We prioritize user privacy and security.</p>
+    
+    <!-- About Section with Redirect Buttons -->
+    <div class="about-buttons">
+        <button onclick="window.location.href='https://nitesh-kumar-14-10.github.io/Portfolio/'">Portfolio</button>
+        <button onclick="window.location.href='https://x.com/Nitesh_Kumar_00'">Twitter</button>
+        <button onclick="window.location.href='https://github.com/nitesh-kumar-14-10'">GitHub</button>
+        <button onclick="window.location.href='https://n8kt-solutions.onrender.com/'">N8KT -Solutions</button>
+    </div>
+    
+    <!-- Optional CSS to style the buttons -->
+    <style>
+        .about-buttons {
+            margin-top: 20px;
+        }
+        .about-buttons button {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            border: none; /* Remove border */
+            padding: 10px 20px; /* Add padding */
+            margin: 5px; /* Add spacing between buttons */
+            cursor: pointer; /* Change cursor on hover */
+            font-size: 16px; /* Larger text */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease;
+        }
+        .about-buttons button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+    </style>
+    
