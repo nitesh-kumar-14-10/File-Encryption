@@ -32,4 +32,4 @@ def decrypt():
 
 if __name__ == "__main__":
     # Do not use waitress.serve here, as Gunicorn will handle it.
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run()
