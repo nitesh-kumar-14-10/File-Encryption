@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, make_response
 import enscryption_helper as crypt  # Make sure the module name is correct
-from waitress import serve
+# Remove waitress import
 
 app = Flask(__name__)
 
@@ -31,5 +31,5 @@ def decrypt():
     return "Invalid request"
 
 if __name__ == "__main__":
-    # Use a valid local address for binding
-    serve(app, host='127.0.0.1', port=5000)
+    # Do not use waitress.serve here, as Gunicorn will handle it.
+    app.run(debug=True, host='0.0.0.0', port=5000)
