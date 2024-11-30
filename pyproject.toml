@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "file-encryption-system-main"
+version = "0.1.0"
+description = ""
+authors = ["Admin <n8kt.solutions@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+gunicorn = "^23.0.0"
+waitress = "^3.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+package-mode = false

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, make_response
-import enscryption_helper as crypt
-
+import enscryption_helper as crypt  # Make sure the module name is correct
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -23,7 +23,7 @@ def decrypt():
     f = request.files['file']
     passphrase = request.form['passphrase'].encode()
     c = crypt.decrypt(f.read(), passphrase)
-    if(c):
+    if c:
         response = make_response(c)
         response.headers.set('Content-Type', 'application/octet-stream')
         response.headers.set('Content-Disposition', 'attachment', filename=f.filename)
@@ -31,4 +31,5 @@ def decrypt():
     return "Invalid request"
 
 if __name__ == "__main__":
-    app.run()
+    # Use a valid local address for binding
+    serve(app, host='127.0.0.1', port=5000)
